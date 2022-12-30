@@ -5,11 +5,14 @@ import {
 	fetchAllKidsProducts
 } from './shop.repository';
 
+import {fetchAllMensShoes} from './men.repository';
+
 const repositoryContainer = {
 	fetchAllProducts,
 	fetchAllMensProducts,
 	fetchAllKidsProducts,
-	fetchAllWomensProducts
+	fetchAllWomensProducts,
+	fetchAllMensShoes
 };
 
 export {repositoryContainer};

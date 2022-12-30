@@ -6,3 +6,5 @@ const menRouter: Router = express.Router();
 
 menRouter.get('/', controllerContainer.getAllMensProducts);
 menRouter.get('/shoes', controllerContainer.getAllMensShoes);
+
+export {menRouter};

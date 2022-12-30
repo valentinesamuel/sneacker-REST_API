@@ -5,11 +5,14 @@ import {
 	getAllKidsProductsService
 } from './shop.service';
 
+import {getAllMensShoesService} from './men.service';
+
 const serviceContainer = {
 	getAllProductsService,
 	getAllMensProductsService,
 	getAllWomensProductsService,
-	getAllKidsProductsService
+	getAllKidsProductsService,
+	getAllMensShoesService
 };
 
 export {serviceContainer};
