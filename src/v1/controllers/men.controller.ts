@@ -1,7 +1,7 @@
-import {NextFunction, Response} from 'express';
+import {Response} from 'express';
 import {serviceContainer} from '../services/index.service';
 
-const getAllMensShoes = async (res: Response, _nextFunction: NextFunction) => {
+const getAllMensShoes = async (res: Response) => {
 	try {
 		const products = await serviceContainer.getAllMensShoesService();
 		console.log(products);
