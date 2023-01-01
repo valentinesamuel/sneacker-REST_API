@@ -1,10 +1,11 @@
 import {repositoryContainer} from '../../repositories/index.repository';
 
-const getAllProductsService = async (requestBody: unknown) => {
-	const products = await repositoryContainer.fetchAllProducts(requestBody);
+const getAllProductsService = async () => {
+	const products = await repositoryContainer.fetchAllProducts();
 	if (products === null) {
 		throw new Error('Products could not be retrieved');
 	}
+	return products;
 };
 
 const getFilteredProductsService = async (requestBody: unknown) => {
@@ -12,29 +13,31 @@ const getFilteredProductsService = async (requestBody: unknown) => {
 	if (products === null) {
 		throw new Error('Products could not be retrieved');
 	}
+	return products;
 };
 
-const getAllMensProductsService = async (requestBody: unknown) => {
-	const products = await repositoryContainer.fetchAllMensProducts(requestBody);
+const getAllMensProductsService = async () => {
+	const products = await repositoryContainer.fetchAllMensProducts();
 	if (products === null) {
 		throw new Error("Men's shoes could not be retrieved");
 	}
+	return products;
 };
 
-const getAllWomensProductsService = async (requestBody: unknown) => {
-	const products = await repositoryContainer.fetchAllWomensProducts(
-		requestBody
-	);
+const getAllWomensProductsService = async () => {
+	const products = await repositoryContainer.fetchAllWomensProducts();
 	if (products === null) {
 		throw new Error("Women's shoes could not be retrieved");
 	}
+	return products;
 };
 
-const getAllKidsProductsService = async (requestBody: unknown) => {
-	const products = await repositoryContainer.fetchAllKidsProducts(requestBody);
+const getAllKidsProductsService = async () => {
+	const products = await repositoryContainer.fetchAllKidsProducts();
 	if (products === null) {
 		throw new Error('Kids shoes could not be retrieved');
 	}
+	return products;
 };
 
 export {

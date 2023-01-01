@@ -1,7 +1,7 @@
 import {repositoryContainer} from '../../repositories/index.repository';
 
-const getAllMensShoesService = async (requestBody: unknown) => {
-	const products = await repositoryContainer.fetchAllMensShoes(requestBody);
+const getAllMensShoesService = async () => {
+	const products = await repositoryContainer.fetchAllMensShoes();
 	if (products === null) {
 		throw new Error('Mens shoes could not be retrieved');
 	}

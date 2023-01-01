@@ -1,18 +1,10 @@
-import {NextFunction, Request, Response} from 'express';
+import {Request, Response} from 'express';
 import {convertStringToObject} from '../middleware/query-parser';
 import {serviceContainer} from '../services/index.service';
 
-const getAllProducts = async (
-	req: Request,
-	res: Response,
-	_nextFunction: NextFunction
-) => {
+const getAllProducts = async (res: Response) => {
 	try {
-		const urlString = req.url;
-		const result = convertStringToObject(urlString.substring(2));
-		console.log(result);
-
-		const products = await serviceContainer.getAllProductsService(req.body);
+		const products = await serviceContainer.getAllProductsService();
 		console.log(products);
 
 		res.status(200).json({
@@ -21,12 +13,17 @@ const getAllProducts = async (
 	} catch (error) {}
 };
 
-const getFilteredProducts = async (
-	req: Request,
-	res: Response,
-	_nextFunction: NextFunction
-) => {
+const getFilteredProducts = async (req: Request, res: Response) => {
 	try {
+		const urlString = req.url;
+		const querySeparatorIndex = urlString.indexOf('?');
+		const result = convertStringToObject(
+			urlString.substring(querySeparatorIndex + 1)
+		);
+		console.log(result);
+
+		// const query = {} query will be transformed in database format, added to this object an d sent to the service
+
 		const products = await serviceContainer.getFilteredProductsService(
 			req.body
 		);
@@ -38,13 +35,9 @@ const getFilteredProducts = async (
 	} catch (error) {}
 };
 
-const getAllMensProducts = async (
-	req: Request,
-	res: Response,
-	_nextFunction: NextFunction
-) => {
+const getAllMensProducts = async (res: Response) => {
 	try {
-		const products = await serviceContainer.getAllMensProductsService(req.body);
+		const products = await serviceContainer.getAllMensProductsService();
 		console.log(products);
 		res.status(300).json({
 			data: "You are now getting all men's product"
@@ -52,15 +45,9 @@ const getAllMensProducts = async (
 	} catch (error) {}
 };
 
-const getAllWomensProducts = async (
-	req: Request,
-	res: Response,
-	_nextFunction: NextFunction
-) => {
+const getAllWomensProducts = async (res: Response) => {
 	try {
-		const products = await serviceContainer.getAllWomensProductsService(
-			req.body
-		);
+		const products = await serviceContainer.getAllWomensProductsService();
 		console.log(products);
 		res.status(300).json({
 			data: "You are now getting all women's product"
@@ -68,13 +55,9 @@ const getAllWomensProducts = async (
 	} catch (error) {}
 };
 
-const getAllKidsProducts = async (
-	req: Request,
-	res: Response,
-	_nextFunction: NextFunction
-) => {
+const getAllKidsProducts = async (res: Response) => {
 	try {
-		const products = await serviceContainer.getAllKidsProductsService(req.body);
+		const products = await serviceContainer.getAllKidsProductsService();
 		console.log(products);
 		res.status(300).json({
 			data: "You are now getting all kid's product"
