@@ -2,7 +2,7 @@ interface ObjectIndexer {
 	[key: string]: any;
 }
 
-export { ObjectIndexer }
+export {ObjectIndexer};
 
 /**
  * Problem: fix Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
