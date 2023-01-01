@@ -6,6 +6,12 @@ const fetchAllProducts = async (_requestBody: unknown) => {
 	console.log('About to enter db to get all products');
 };
 
+const fetchFilteredProducts = async (_requestBody: unknown) => {
+	// const products = await Product.find({});
+	// return products;
+	console.log('About to enter db to get products according to query params');
+};
+
 const fetchAllMensProducts = async (_requestBody: unknown) => {
 	// const products = await Product.find({});
 	// return products;
@@ -28,5 +34,6 @@ export {
 	fetchAllProducts,
 	fetchAllMensProducts,
 	fetchAllWomensProducts,
-	fetchAllKidsProducts
+	fetchAllKidsProducts,
+	fetchFilteredProducts
 };

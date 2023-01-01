@@ -2,7 +2,8 @@ import {
 	fetchAllProducts,
 	fetchAllMensProducts,
 	fetchAllWomensProducts,
-	fetchAllKidsProducts
+	fetchAllKidsProducts,
+	fetchFilteredProducts
 } from './shop.repository';
 
 import {fetchAllMensShoes} from './men.repository';
@@ -12,7 +13,8 @@ const repositoryContainer = {
 	fetchAllMensProducts,
 	fetchAllKidsProducts,
 	fetchAllWomensProducts,
-	fetchAllMensShoes
+	fetchAllMensShoes,
+	fetchFilteredProducts
 };
 
 export {repositoryContainer};

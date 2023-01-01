@@ -16,6 +16,23 @@ const getAllProducts = async (
 	} catch (error) {}
 };
 
+const getFilteredProducts = async (
+	req: Request,
+	res: Response,
+	_nextFunction: NextFunction
+) => {
+	try {
+		const products = await serviceContainer.getFilteredProductsService(
+			req.body
+		);
+		console.log(products);
+
+		res.status(300).json({
+			data: 'You are now getting products based on your query paramaters'
+		});
+	} catch (error) {}
+};
+
 const getAllMensProducts = async (
 	req: Request,
 	res: Response,
@@ -64,5 +81,6 @@ export {
 	getAllProducts,
 	getAllMensProducts,
 	getAllWomensProducts,
-	getAllKidsProducts
+	getAllKidsProducts,
+	getFilteredProducts
 };

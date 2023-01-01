@@ -7,6 +7,13 @@ const getAllProductsService = async (requestBody: unknown) => {
 	}
 };
 
+const getFilteredProductsService = async (requestBody: unknown) => {
+	const products = await repositoryContainer.fetchFilteredProducts(requestBody);
+	if (products === null) {
+		throw new Error('Products could not be retrieved');
+	}
+};
+
 const getAllMensProductsService = async (requestBody: unknown) => {
 	const products = await repositoryContainer.fetchAllMensProducts(requestBody);
 	if (products === null) {
@@ -34,5 +41,6 @@ export {
 	getAllProductsService,
 	getAllMensProductsService,
 	getAllWomensProductsService,
-	getAllKidsProductsService
+	getAllKidsProductsService,
+	getFilteredProductsService
 };
