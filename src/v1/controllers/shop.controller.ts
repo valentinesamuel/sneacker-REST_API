@@ -1,4 +1,5 @@
 import {NextFunction, Request, Response} from 'express';
+import {convertStringToObject} from '../middleware/query-parser';
 import {serviceContainer} from '../services/index.service';
 
 const getAllProducts = async (
@@ -7,11 +8,15 @@ const getAllProducts = async (
 	_nextFunction: NextFunction
 ) => {
 	try {
+		const urlString = req.url;
+		const result = convertStringToObject(urlString.substring(2));
+		console.log(result);
+
 		const products = await serviceContainer.getAllProductsService(req.body);
 		console.log(products);
 
-		res.status(300).json({
-			data: 'You are noe in the shop route'
+		res.status(200).json({
+			data: 'You are now in the shop route'
 		});
 	} catch (error) {}
 };
