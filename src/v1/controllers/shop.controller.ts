@@ -16,7 +16,7 @@ const getAllProducts = async (_req: Request, res: Response) => {
 			data: 'You are now in the shop route'
 		});
 	} catch (error) {
-		errorResponse([], res, getErrorMessage(error));
+		errorResponse([], res, getErrorMessage(error), 404);
 	}
 };
 
@@ -40,7 +40,7 @@ const getFilteredProducts = async (req: Request, res: Response) => {
 			data: 'You are now getting products based on your query paramaters'
 		});
 	} catch (error) {
-		errorResponse([], res, getErrorMessage(error));
+		errorResponse([], res, getErrorMessage(error), 404);
 	}
 };
 
@@ -52,7 +52,7 @@ const getAllMensProducts = async (_req: Request, res: Response) => {
 			data: "You are now getting all men's product"
 		});
 	} catch (error) {
-		errorResponse([], res, getErrorMessage(error));
+		errorResponse([], res, getErrorMessage(error), 404);
 	}
 };
 
@@ -64,7 +64,7 @@ const getAllWomensProducts = async (_req: Request, res: Response) => {
 			data: "You are now getting all women's product"
 		});
 	} catch (error) {
-		errorResponse([], res, getErrorMessage(error));
+		errorResponse([], res, getErrorMessage(error), 404);
 	}
 };
 
@@ -77,7 +77,7 @@ const getAllKidsProducts = async (_req: Request, res: Response) => {
 			data: "You are now getting all kid's product"
 		});
 	} catch (error) {
-		errorResponse([], res, getErrorMessage(error));
+		errorResponse([], res, getErrorMessage(error), 404);
 	}
 };
 
