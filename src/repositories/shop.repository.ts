@@ -3,7 +3,8 @@
 const fetchAllProducts = async () => {
 	// const products = await Product.find({});
 	// return products;
-	console.log('About to enter db to get all products');
+	// console.log('About to enter db to get all products');
+	return null;
 };
 
 const fetchFilteredProducts = async (_requestBody: unknown) => {
