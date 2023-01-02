@@ -1,2 +1,2 @@
 # snucker-REST-API
-A e-commerce sneaker backend.
+An e-commerce sneaker backend.
