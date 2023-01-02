@@ -1,5 +1,5 @@
 import {Request, Response} from 'express';
-import {dbQueryParser} from '../../util/db-query_parser';
+import {dbQueryOrderParser, dbQueryParser} from '../../util/db-query_parser';
 import {
 	errorResponse,
 	getErrorMessage,
@@ -28,11 +28,13 @@ const getFilteredProducts = async (req: Request, res: Response) => {
 		const query = convertStringToObject(
 			urlString.substring(querySeparatorIndex + 1)
 		);
-		console.log(query);
-
 		const dbQuery = dbQueryParser(query);
+		const dbQueryOrder = dbQueryOrderParser(query);
 
-		const products = await serviceContainer.getFilteredProductsService(dbQuery);
+		const products = await serviceContainer.getFilteredProductsService(
+			dbQuery,
+			dbQueryOrder
+		);
 		console.log(products);
 
 		successResponse(res, 'This can be any message', {

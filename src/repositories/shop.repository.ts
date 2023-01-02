@@ -6,7 +6,10 @@ const fetchAllProducts = async () => {
 	console.log('About to enter db to get all products');
 };
 
-const fetchFilteredProducts = async (_requestBody: unknown) => {
+const fetchFilteredProducts = async (
+	_requestBody: unknown,
+	_dbQueryOrder: any
+) => {
 	// const products = await Product.find({});
 	// return products;
 	console.log('About to enter db to get products according to query params');

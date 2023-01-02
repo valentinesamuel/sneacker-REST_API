@@ -7,7 +7,7 @@ const convertStringToObject = (queryString: string) => {
 	queryString.split('&').forEach((query) => {
 		const key = query.split('=')[0];
 		const value = query.split('=')[1];
-		if (key === 'price') {
+		if (key === 'priceorder') {
 			queryObject[key] = value;
 		} else {
 			queryObject[key] = value.replace(/%/g, ' ').split('+');
