@@ -10,6 +10,8 @@ const getAllProductsService = async () => {
 
 const getFilteredProductsService = async (requestBody: unknown) => {
 	const products = await repositoryContainer.fetchFilteredProducts(requestBody);
+	console.log(requestBody);
+
 	if (products === null) {
 		throw new Error('Products could not be retrieved');
 	}

@@ -1,4 +1,5 @@
 import {Request, Response} from 'express';
+import {dbQueryParser} from '../../util/db-query_parser';
 import {
 	errorResponse,
 	getErrorMessage,
@@ -24,16 +25,14 @@ const getFilteredProducts = async (req: Request, res: Response) => {
 	try {
 		const urlString = req.url;
 		const querySeparatorIndex = urlString.indexOf('?');
-		const result = convertStringToObject(
+		const query = convertStringToObject(
 			urlString.substring(querySeparatorIndex + 1)
 		);
-		console.log(result);
+		console.log(query);
 
-		// const query = {} query will be transformed in database format, added to this object an d sent to the service
+		const dbQuery = dbQueryParser(query);
 
-		const products = await serviceContainer.getFilteredProductsService(
-			req.body
-		);
+		const products = await serviceContainer.getFilteredProductsService(dbQuery);
 		console.log(products);
 
 		successResponse(res, 'This can be any message', {
