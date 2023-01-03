@@ -5,6 +5,7 @@ const getAllMensShoesService = async () => {
 	if (products === null) {
 		throw new Error('Mens shoes could not be retrieved');
 	}
+	return products;
 };
 
 export {getAllMensShoesService};
