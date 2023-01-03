@@ -16,7 +16,7 @@ const getFilteredProductsService = async (
 		requestBody,
 		dbQueryOrder
 	);
-	console.log(requestBody, dbQueryOrder);
+	// console.log(requestBody, dbQueryOrder);
 
 	if (products === null) {
 		throw new Error('Products could not be retrieved');

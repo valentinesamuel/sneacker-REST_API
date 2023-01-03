@@ -1,37 +1,28 @@
-// import {Product} from '../model/product.model';
+import {Product} from '../model/product.model';
 
 const fetchAllProducts = async () => {
-	// const products = await Product.find({});
-	// return products;
-	console.log('About to enter db to get all products');
+	const products = await Product.find({});
+	return products;
 };
 
-const fetchFilteredProducts = async (
-	_requestBody: unknown,
-	_dbQueryOrder: any
-) => {
-	// const products = await Product.find(requestBody).sort(_dbQueryOrder);
-	// return products;
-	console.log('About to enter db to get products according to query params');
+const fetchFilteredProducts = async (requestBody: any, _dbQueryOrder: any) => {
+	const products = await Product.find({...requestBody});
+	return products;
 };
 
 const fetchAllMensProducts = async () => {
-	// const products = await Product.find({ gender: 'male' });
-	// return products;
-	console.log("About to enter db to get all men's product");
+	const products = await Product.find({gender: 'male'});
+	return products;
 };
 
 const fetchAllWomensProducts = async () => {
-	// const products = await Product.find({{ gender: 'female' }});
-	// return products;
-	console.log("About to enter db to get all women's product");
-	return null;
+	const products = await Product.find({gender: 'female'});
+	return products;
 };
 
 const fetchAllKidsProducts = async () => {
-	// const products = await Product.find({{ age: 'kid' }});
-	// return products;
-	console.log('About to enter db to get all kids product');
+	const products = await Product.find({age: 'kid'});
+	return products;
 };
 
 export {

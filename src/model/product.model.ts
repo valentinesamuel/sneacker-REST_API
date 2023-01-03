@@ -1,6 +1,4 @@
 import mongoose from 'mongoose';
-import {ProductDetail} from './product-detail.model';
-import {Review} from './review.model';
 const Schema = mongoose.Schema;
 
 const ProductSchema = new Schema({
@@ -86,12 +84,52 @@ const ProductSchema = new Schema({
 		required: false
 	},
 	productDetail: {
-		type: ProductDetail,
-		required: true
+		title: {
+			type: String,
+			required: true
+		},
+		description: {
+			type: String,
+			required: true
+		},
+		benefits: {
+			type: [String],
+			required: true
+		},
+		details: {
+			type: [String],
+			required: true
+		},
+		moreDetails: {
+			type: [String],
+			required: true
+		}
 	},
 	reviews: {
-		type: Review,
-		required: true
+		id: {
+			type: Number,
+			required: true
+		},
+		name: {
+			type: String,
+			required: true
+		},
+		title: {
+			type: [String],
+			required: true
+		},
+		rating: {
+			type: Number,
+			required: true
+		},
+		comment: {
+			type: String,
+			required: true
+		},
+		date: {
+			type: String,
+			required: true
+		}
 	}
 });
 

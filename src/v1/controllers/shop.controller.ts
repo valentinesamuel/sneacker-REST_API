@@ -13,9 +13,7 @@ const getAllProducts = async (_req: Request, res: Response) => {
 		const products = await serviceContainer.getAllProductsService();
 		console.log(products);
 
-		successResponse(res, 'This can be any message', {
-			data: 'You are now in the shop route'
-		});
+		successResponse(res, 'This can be any message', products, 200);
 	} catch (error) {
 		errorResponse([], res, getErrorMessage(error), 404);
 	}
@@ -37,9 +35,7 @@ const getFilteredProducts = async (req: Request, res: Response) => {
 		);
 		console.log(products);
 
-		successResponse(res, 'This can be any message', {
-			data: 'You are now getting products based on your query paramaters'
-		});
+		successResponse(res, 'This can be any message', products, 200);
 	} catch (error) {
 		errorResponse([], res, getErrorMessage(error), 404);
 	}
@@ -49,9 +45,7 @@ const getAllMensProducts = async (_req: Request, res: Response) => {
 	try {
 		const products = await serviceContainer.getAllMensProductsService();
 		console.log(products);
-		successResponse(res, 'This can be any message', {
-			data: "You are now getting all men's product"
-		});
+		successResponse(res, 'This can be any message', products, 200);
 	} catch (error) {
 		errorResponse([], res, getErrorMessage(error), 404);
 	}
@@ -61,9 +55,7 @@ const getAllWomensProducts = async (_req: Request, res: Response) => {
 	try {
 		const products = await serviceContainer.getAllWomensProductsService();
 		console.log(products);
-		successResponse(res, 'This can be any message', {
-			data: "You are now getting all women's product"
-		});
+		successResponse(res, 'This can be any message', products, 200);
 	} catch (error) {
 		errorResponse([], res, getErrorMessage(error), 404);
 	}
@@ -74,9 +66,7 @@ const getAllKidsProducts = async (_req: Request, res: Response) => {
 		const products = await serviceContainer.getAllKidsProductsService();
 		console.log(products);
 
-		successResponse(res, 'This can be any message', {
-			data: "You are now getting all kid's product"
-		});
+		successResponse(res, 'This can be any message', products, 200);
 	} catch (error) {
 		errorResponse([], res, getErrorMessage(error), 404);
 	}

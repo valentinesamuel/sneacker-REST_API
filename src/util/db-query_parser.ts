@@ -14,28 +14,28 @@ const dbQueryParser = (query: any) => {
 	const queryObject: any = {};
 
 	if (gender !== undefined) {
-		queryObject.gender = {gender: {$in: gender}};
+		queryObject.gender = {$in: gender};
 	}
 	if (brand !== undefined) {
-		queryObject.brand = {brand: {$in: brand}};
+		queryObject.brand = {$in: brand};
 	}
 	if (age !== undefined) {
-		queryObject.age = {age: {$in: age}};
+		queryObject.age = {$in: age};
 	}
 	if (sport !== undefined) {
-		queryObject.sport = {sport: {$in: sport}};
+		queryObject.sport = {$in: sport};
 	}
 	if (category !== undefined) {
-		queryObject.category = {category: {$in: category}};
+		queryObject.category = {$in: category};
 	}
 	if (sizes !== undefined) {
-		queryObject.sizes = {sizes: {$in: sizes}};
+		queryObject.sizes = {$in: sizes};
 	}
 	if (kidAge !== undefined) {
-		queryObject.kidAge = {kidAge: {$in: kidAge}};
+		queryObject.kidAge = {$in: kidAge};
 	}
 	if (collection !== undefined) {
-		queryObject.collection = {collection: {$in: collection}};
+		queryObject.collection = {$in: collection};
 	}
 	if (priceRange !== undefined) {
 		const lowestPrice = priceRange[0];
