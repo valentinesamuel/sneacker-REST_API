@@ -7,6 +7,8 @@ import {
 } from './shop.repository';
 
 import {fetchAllMensShoes} from './men.repository';
+import {fetchAllWomensShoes} from './women.repository';
+import {fetchAllKidsShoes} from './kids.repository';
 
 const repositoryContainer = {
 	fetchAllProducts,
@@ -14,7 +16,9 @@ const repositoryContainer = {
 	fetchAllKidsProducts,
 	fetchAllWomensProducts,
 	fetchAllMensShoes,
-	fetchFilteredProducts
+	fetchFilteredProducts,
+	fetchAllWomensShoes,
+	fetchAllKidsShoes
 };
 
 export {repositoryContainer};
