@@ -7,7 +7,7 @@ import {
 } from './shop.controller';
 import {getAllMensShoes} from './men.controller';
 import {getAllWomensShoes} from './women.controller';
-import {getAllKidsShoes} from './kids.controller';
+import {getAllKidsShoes, getAllKidsClothes} from './kids.controller';
 
 export const controllerContainer = {
 	getAllProducts,
@@ -17,5 +17,6 @@ export const controllerContainer = {
 	getFilteredProducts,
 	getAllMensShoes,
 	getAllWomensShoes,
-	getAllKidsShoes
+	getAllKidsShoes,
+	getAllKidsClothes
 };

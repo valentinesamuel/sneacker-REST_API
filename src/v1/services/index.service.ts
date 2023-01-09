@@ -8,7 +8,7 @@ import {
 
 import {getAllMensShoesService} from './men.service';
 import {getAllWomensShoesService} from './women.service';
-import {getAllKidsShoesService} from './kids.service';
+import {getAllKidsShoesService, getAllKidsClothesService} from './kids.service';
 
 const serviceContainer = {
 	getAllProductsService,
@@ -18,7 +18,8 @@ const serviceContainer = {
 	getAllMensShoesService,
 	getFilteredProductsService,
 	getAllWomensShoesService,
-	getAllKidsShoesService
+	getAllKidsShoesService,
+	getAllKidsClothesService
 };
 
 export {serviceContainer};

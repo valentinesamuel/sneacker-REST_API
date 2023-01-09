@@ -6,5 +6,6 @@ const kidsRouter: Router = express.Router();
 
 kidsRouter.get('/', controllerContainer.getAllKidsProducts);
 kidsRouter.get('/shoes', controllerContainer.getAllKidsShoes);
+kidsRouter.get('/clothing', controllerContainer.getAllKidsClothes);
 
 export {kidsRouter};

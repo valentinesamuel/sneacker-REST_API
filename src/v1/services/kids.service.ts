@@ -8,4 +8,12 @@ const getAllKidsShoesService = async () => {
 	return products;
 };
 
-export {getAllKidsShoesService};
+const getAllKidsClothesService = async () => {
+	const products = await repositoryContainer.fetchAllKidsClothes();
+	if (products === null) {
+		throw new Error('Kids clothes could not be retrieved');
+	}
+	return products;
+};
+
+export {getAllKidsShoesService, getAllKidsClothesService};

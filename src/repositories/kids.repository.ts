@@ -5,4 +5,9 @@ const fetchAllKidsShoes = async () => {
 	return products;
 };
 
-export {fetchAllKidsShoes};
+const fetchAllKidsClothes = async () => {
+	const product = await Product.find({age: 'kid', category: 'clothing'});
+	return product;
+};
+
+export {fetchAllKidsShoes, fetchAllKidsClothes};

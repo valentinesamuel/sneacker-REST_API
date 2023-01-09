@@ -16,4 +16,14 @@ const getAllKidsShoes = async (_req: Request, res: Response) => {
 	}
 };
 
-export {getAllKidsShoes};
+const getAllKidsClothes = async (_req: Request, res: Response) => {
+	try {
+		const products = await serviceContainer.getAllKidsClothesService();
+		console.log(products);
+		successResponse(res, 'This can be any message', products, 200);
+	} catch (error) {
+		errorResponse([], res, getErrorMessage(error), 404);
+	}
+};
+
+export {getAllKidsShoes, getAllKidsClothes};
