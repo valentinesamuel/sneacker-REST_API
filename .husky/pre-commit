@@ -27,14 +27,14 @@ npm run check-types ||
 # Build
 npm run build ||
 {
-    echo 'FYour build process failed. Attend to the errors above';
+    echo 'Your build process failed. Attend to the errors above';
     false;
 }
 
 # Successful comitting
-echo '\n########Commit Success#################Commit Success##########################\n
-########Commit Success#################Commit Success##########################\n
-########Commit Success#################Commit Success##########################\n
-########Commit Success#################Commit Success##########################\n
-########Commit Success#################Commit Success##########################\n
+echo '########Commit Success#################Commit Success##########################
+########Commit Success#################Commit Success##########################
+########Commit Success#################Commit Success##########################
+########Commit Success#################Commit Success##########################
+########Commit Success#################Commit Success##########################
 ########Commit Success#################Commit Success##########################';
