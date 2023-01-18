@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 import express, {Application, NextFunction, Request, Response} from 'express';
 import morgan from 'morgan';
 import * as dotenv from 'dotenv';
@@ -6,7 +7,8 @@ import {mongo_DB_Connect} from './config/mongodb';
 dotenv.config();
 
 const app: Application = express();
-const PORT = process.env.PORT_NUMBER;
+// eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+const PORT = process.env.PORT_NUMBER || 4000;
 
 app.use(morgan('combined'));
 app.use(express.json());
