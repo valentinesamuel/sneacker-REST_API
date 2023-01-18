@@ -9,7 +9,6 @@ import {
 const getAllKidsShoes = async (_req: Request, res: Response) => {
 	try {
 		const products = await serviceContainer.getAllKidsShoesService();
-		console.log(products);
 		successResponse(res, 'This can be any message', products, 200);
 	} catch (error) {
 		errorResponse([], res, getErrorMessage(error), 404);
@@ -19,7 +18,6 @@ const getAllKidsShoes = async (_req: Request, res: Response) => {
 const getAllKidsClothes = async (_req: Request, res: Response) => {
 	try {
 		const products = await serviceContainer.getAllKidsClothesService();
-		console.log(products);
 		successResponse(res, 'This can be any message', products, 200);
 	} catch (error) {
 		errorResponse([], res, getErrorMessage(error), 404);

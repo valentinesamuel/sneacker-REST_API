@@ -11,8 +11,6 @@ import {serviceContainer} from '../services/index.service';
 const getAllProducts = async (_req: Request, res: Response) => {
 	try {
 		const products = await serviceContainer.getAllProductsService();
-		console.log(products);
-
 		successResponse(res, 'This can be any message', products, 200);
 	} catch (error) {
 		errorResponse([], res, getErrorMessage(error), 404);
@@ -33,8 +31,6 @@ const getFilteredProducts = async (req: Request, res: Response) => {
 			dbQuery,
 			dbQueryOrder
 		);
-		console.log(products);
-
 		successResponse(res, 'This can be any message', products, 200);
 	} catch (error) {
 		errorResponse([], res, getErrorMessage(error), 404);
@@ -44,7 +40,6 @@ const getFilteredProducts = async (req: Request, res: Response) => {
 const getAllMensProducts = async (_req: Request, res: Response) => {
 	try {
 		const products = await serviceContainer.getAllMensProductsService();
-		console.log(products);
 		successResponse(res, 'This can be any message', products, 200);
 	} catch (error) {
 		errorResponse([], res, getErrorMessage(error), 404);
@@ -54,7 +49,6 @@ const getAllMensProducts = async (_req: Request, res: Response) => {
 const getAllWomensProducts = async (_req: Request, res: Response) => {
 	try {
 		const products = await serviceContainer.getAllWomensProductsService();
-		console.log(products);
 		successResponse(res, 'This can be any message', products, 200);
 	} catch (error) {
 		errorResponse([], res, getErrorMessage(error), 404);
@@ -64,8 +58,6 @@ const getAllWomensProducts = async (_req: Request, res: Response) => {
 const getAllKidsProducts = async (_req: Request, res: Response) => {
 	try {
 		const products = await serviceContainer.getAllKidsProductsService();
-		console.log(products);
-
 		successResponse(res, 'This can be any message', products, 200);
 	} catch (error) {
 		errorResponse([], res, getErrorMessage(error), 404);
